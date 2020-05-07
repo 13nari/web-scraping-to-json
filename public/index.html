@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="iso-8859-1">
+    
+    <title></title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body class="class2">
+
+    <h1>SALÁRIO MÍNIMO ATUALIZADO</h1><br><br>
+
+    <table class="container-fluid">
+        <tr>
+            <td class="class1"><h4>VIGÊNCIA</h4></td>
+            <td class="class1"><h4>VALOR MENSAL</h4></td>
+            <td class="class1"><h4>VALOR DIÁRIO</h4></td>
+            <td class="class1"><h4>VALOR HORA</h4></td>
+            <td class="class1"><h4>NORMA LEGAL</h4></td>
+            <td class="class1"><h4>D.O.U.</h4></td>
+        </tr>
+    </table>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url:'javascripts/webScraping.json',
+                dataType:'json',
+                success:function(data){
+                    $(data.salarios).each(function(index, value){
+                        var record = '<tr><td>'+value.vigencia+'</td><td>'+value.valor_mensal+'</td><td>'+
+                            value.valor_diario+'</td><td>'+value.valor_hora+'</td><td>'+value.norma_legal+'</td><td>'+value.dou+
+                                '</td></tr>'
+                        $('table').append(record)
+                    })
+                }
+            })
+        })
+    </script>
+
+    <h5 class="class4">&nbspAqui você encontra o valor de todos os salários mínimos até o dia presente de acordo com o site guiatrabalhista.com</h5>
+    <footer class="class3">
+        <h3>Desenvolvido por <a href="https://www.agilwebsites.com">© Ágil Websites</a></h3>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+body {
+  padding: 50px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+}
+
+a {
+  color: #00B7FF;
+}
+
+table, td {
+  border: 1px solid black;
+}
+
+td{
+  text-align: center;
+  font-size: 24px;
+}
+
+h1{
+  text-align: center;
+}
+
+h4{
+  
+  padding-top: 10px;
+}
+
+.class1{
+  background-color: rgba(0, 0, 255, 0.123);
+  border: 3px solid black;
+}
+
+.class2{
+  background-color: rgba(0, 0, 0, 0.185);
+}
+
+.class3{
+  margin-top: 50px;
+}
+
+.class4{
+  margin-top: 10px;
+}
